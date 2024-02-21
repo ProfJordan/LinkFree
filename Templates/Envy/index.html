@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Envy</title>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+    :root {
+        --envy-green: #90ae58;
+        --envy-cream: #f5f5f5;
+        --envy-black: #0d0d0d;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: var(--envy-cream);
+        height: 100vh;
+    }
+
+    .container {
+        width: 300px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .links-container {
+        scroll-behavior: smooth;
+        margin: 5px auto;
+    }
+
+    .info-container {
+        padding-top: 150px;
+        overflow: hidden;
+    }
+
+    .navbar {
+        background-color: var(--envy-green);
+        height: 70px;
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .navbar2 {
+        background-color: var(--envy-green);
+        height: 70px;
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+        position: fixed;
+        top: 45px;
+        left: 0;
+        z-index: 1;
+        padding-bottom: 10px;
+    }
+
+    .image {
+        border: 0px solid var(--envy-cream);
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        margin: auto;
+        background: url("./Jordan-Avatar.png") no-repeat center top/cover;
+        z-index: 3;
+    }
+
+    .image:hover {
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        margin: auto;
+        background: url("./Jordan-Avatar.png") no-repeat center top/cover;
+        transform: scale(1.1);
+    }
+
+    .first_name {
+        text-align: center;
+        color: var(--envy-cream);
+        font-family: "Raleway", sans-serif;
+        font-size: 2rem;
+        font-weight:900;
+        text-transform: uppercase;
+    }
+
+    .last_name {
+        text-align: center;
+        color: var(--envy-black);
+        font-family: "Raleway", sans-serif;
+        font-size: 2rem;
+        font-weight:500;
+        text-transform: uppercase;
+    }
+
+    .name {
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        font-size: 2rem;
+    }
+
+    .name:hover {
+        font-size: 2.5rem;
+        text-decoration: underline;
+        color: var(--envy-cream);
+    }
+
+    .divider-custom {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--envy-green);
+    }
+
+    .divider-custom.divider-light .divider-custom-line {
+        background-color: var(--envy-green);
+    }
+
+    .divider-custom .divider-custom-line {
+        width: 100%;
+        max-width: 7rem;
+        height: 0.25rem;
+        background-color: var(--envy-green);
+        border-radius: 1rem;
+        border-color: var(--envy-green);
+    }
+
+    .divider-custom.divider-light .divider-custom-icon {
+        color: var(--envy-green);
+    }
+
+    .divider-custom .divider-custom-icon {
+        color: var(--envy-green);
+        font-size: 2rem;
+    }
+
+    .divider-custom-icon {
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .description {
+        text-align: center;
+        color: var(--envy-cream);
+        font-family: "Raleway", sans-serif;
+        font-size: 1.25rem;
+        margin-top: 25px;
+    }
+
+    .link {
+        text-align: center;
+        height: 70px;
+        width: 100%;
+        background-color: var(--envy-green);
+        font-family: "Raleway", sans-serif;
+        margin-top: 15px;
+        border-radius: 8px;
+        opacity: 0.96;
+        text-decoration: none;
+    }
+
+    .link:hover {
+        opacity: 0.9;
+    }
+
+    .link-icon {
+        font-size: 2rem;
+        float: left;
+        padding-right: 30px;
+        border-right: 3px solid var(--envy-black);
+    }
+
+    .link-icon:hover {
+    }
+
+    .link-text {
+        font-size: 1.5rem;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        color: #000;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-weight: 800;
+    }
+
+    .link-text:hover {
+        color: var(--envy-cream);
+        font-size: 2rem;
+    }
+
+    .platform {
+        color: var(--envy-black);
+        text-decoration: none;
+    }
+
+    .platform:hover {
+        color: var(--envy-cream) !important;
+        transform: scale(1.1);
+    }
+
+    .platform > .link > i.link-icon {
+    }
+
+    .platform:hover > .link > i.link-icon {
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: var(--envy-green);
+        color: var(--envy-cream);
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        font-weight: 100;
+        font-size: 1.5rem;
+        opacity: 0.96;
+    }
+
+    .foot-text {
+        color: var(--envy-black);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .vertical-center {
+        margin: 0;
+        position: relative;
+        top: 50%;
+        left: 10%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .foot-link {
+        color: var(--envy-black);
+        text-decoration: none !important;
+        font-weight: 100 !important;
+    }
+
+    .foot-link:hover {
+        font-size: 1.25rem;
+        text-decoration: none !important;
+        font-weight: 900 !important;
+    }
+
+    .animated-icons {
+        color: var(--envy-green);
+        animation: iconAnimation 2s infinite alternate;
+    }
+
+    @keyframes iconAnimation {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.2);
+        }
+    }
+</style>
+
+<!-- Nav bar  -->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <a class="navbar" href="https://jordanhalliday.me">
+            <span class="center name"><span class="first_name">Jordan</span><span class="last_name">Halliday</span></span>
+        </a>
+    </nav>
+    <nav class="navbar2 navbar-expand-lg bg-secondary text-uppercase fixed-top" id="secondNav">
+        <div class="description">Full Stack Web Developer &amp; Graphic Designer</div>
+    </nav>
+
+<!-- Info Container -->
+    <div class="info-container container">
+        <a href="https://jordanhalliday.me/" class="website" title="jordanhalliday.me">
+            <div class="image"></div>
+        </a>
+    </div>
+
+<!-- About Links -->
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="fas fa-solid fa-user-tie animated-icons"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+    </div>
+    
+    <div class="links-container container">
+
+
+        <a href="https://jordanhalliday.me/" class="platform">
+            <div id="Website" class="link">
+                <i class="vertical-center link-icon fa-solid fa-globe"></i>
+                <p class="link-text">About Me</p>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/jordan-cade-halliday/" class="platform">
+            <div id="LinkedIn" class="link">
+                <i class="vertical-center link-icon fab fa-linkedin-in"></i>
+                <p class="link-text">LinkedIn</p>
+            </div>
+        </a>
+    </div>
+<!-- Art Links -->
+<div class="divider-custom divider-light">
+    <div class="divider-custom-line"></div>
+<div class="divider-custom-icon">
+    <i class="fas fa-solid fa-swatchbook animated-icons"></i>
+</div>
+<div class="divider-custom-line"></div>
+</div>
+
+<div class="links-container container">
+
+
+<a href="https://pineb.ee/jchport/" class="platform">
+    <div id="Portfolio" class="link">
+        <i class="vertical-center link-icon fab fa-solid fa-book-open"></i>
+        <p class="link-text">Portfolio</p>
+    </div>
+</a>
+</div>
+
+<!-- Coding Links -->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-solid fa-code animated-icons"></i>
+            </div>
+                <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="links-container container">
+
+
+        <a href="https://github.com/ProfJordan/" class="platform">
+            <div id="Github" class="link">
+                <i class="vertical-center link-icon fab fa-github"></i>
+                <p class="link-text">Github</p>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="footer">
+        <span class="foot-text template-text">
+            <span class="bold">Envy</span> template by:
+            <a class="foot-link" href="https://jordanhalliday.me">
+                <span class="bold">Jordan Halliday</span>
+            </a>
+            of
+            <a class="foot-link" href="https://pinebeecreative.com">
+                <span class="bold">Pinebee Creative</span>
+            </a>
+        </span>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/63ac9b11ad.js" crossorigin="anonymous"></script>
+</html>
